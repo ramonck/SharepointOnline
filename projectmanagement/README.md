@@ -1,5 +1,7 @@
 # Manage projects from Sharepoint Online
 
+Video: https://youtu.be/eEk2hUWRjLQ
+
 Code for row color (Format View):
 ```
 {
