@@ -49,11 +49,4 @@ Code for row color (Format View):
     ]
   }
 }
-
-
-
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
-  "additionalRowClass": "sp-css-backgroundColor-BgMintGreen sp-field-fontSizeSmall sp-css-color-MintGreenFont"
-}
 ```
