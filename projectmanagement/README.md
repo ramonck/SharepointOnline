@@ -1,13 +1,59 @@
 # Manage projects from Sharepoint Online
 
-Code for column color:
+Code for row color (Format View):
 ```
 {
-    "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json",
-    "elmType": "div",
-    "txtContent": "@currentField",
-    "style": {
-        "background-color": "=if(Number(@currentField) == 0, '', if(@currentField >= @now, 'lightgreen', 'red'))"
-    }
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+  "additionalRowClass": {
+    "operator": ":",
+    "operands": [
+      {
+        "operator": ">",
+        "operands": [
+          {
+            "operator": "Date()",
+            "operands": [
+              {
+                "operator": "toDateString()",
+                "operands": [
+                  {
+                    "operator": "Date()",
+                    "operands": [
+                      "[$EndDate]"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "operator": "Date()",
+            "operands": [
+              {
+                "operator": "toDateString()",
+                "operands": [
+                  {
+                    "operator": "Date()",
+                    "operands": [
+                      "[$DueDate]"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "sp-css-backgroundColor-BgDustRose sp-field-fontSizeSmall sp-css-color-DustRoseFont",
+      "sp-css-backgroundColor-BgMintGreen sp-field-fontSizeSmall sp-css-color-MintGreenFont"
+    ]
+  }
+}
+
+
+
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/row-formatting.schema.json",
+  "additionalRowClass": "sp-css-backgroundColor-BgMintGreen sp-field-fontSizeSmall sp-css-color-MintGreenFont"
 }
 ```
